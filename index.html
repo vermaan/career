@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anuraag Verma — Engineering Leadership Story</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #E8D48B;
+    --navy: #0A1628;
+    --navy-mid: #142238;
+    --navy-light: #1C3050;
+    --slate: #8A9BB5;
+    --white: #F0F2F5;
+    --accent: #4ECDC4;
+    --accent2: #FF6B6B;
+    --text: #CBD5E1;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Instrument Sans', sans-serif;
+    background: var(--navy);
+    color: var(--text);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 10% 60px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -200px;
+    right: -200px;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -100px;
+    left: -100px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(78,205,196,0.05) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.2s forwards;
+  }
+
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(48px, 7vw, 96px);
+    color: var(--white);
+    line-height: 1.05;
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.4s forwards;
+  }
+
+  .hero h1 em {
+    color: var(--gold);
+    font-style: italic;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(18px, 2.2vw, 24px);
+    color: var(--slate);
+    max-width: 680px;
+    line-height: 1.6;
+    margin-bottom: 48px;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.6s forwards;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.8s forwards;
+  }
+
+  .hero-cta a {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 1px;
+    padding: 14px 28px;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+
+  .hero-cta a:hover {
+    background: var(--gold);
+    color: var(--navy);
+  }
+
+  .hero-cta a.primary {
+    background: var(--gold);
+    color: var(--navy);
+    font-weight: 600;
+  }
+
+  .hero-cta a.primary:hover {
+    background: var(--gold-light);
+  }
+
+  .scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    opacity: 0;
+    animation: fadeUp 0.8s 1.2s forwards;
+  }
+
+  .scroll-indicator span {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--slate);
+  }
+
+  .scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+    animation: scrollPulse 2s infinite;
+  }
+
+  /* ── METRICS STRIP ── */
+  .metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    border-top: 1px solid rgba(201,168,76,0.15);
+    border-bottom: 1px solid rgba(201,168,76,0.15);
+  }
+
+  .metric {
+    padding: 48px 40px;
+    text-align: center;
+    border-right: 1px solid rgba(201,168,76,0.08);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .metric::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(201,168,76,0.03) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+
+  .metric:hover::before { opacity: 1; }
+
+  .metric-number {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(36px, 4vw, 56px);
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .metric-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--slate);
+    line-height: 1.5;
+  }
+
+  /* ── SECTIONS ── */
+  .section {
+    padding: 100px 10%;
+    position: relative;
+  }
+
+  .section-header {
+    margin-bottom: 64px;
+  }
+
+  .section-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-tag::before {
+    content: '';
+    width: 40px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .section h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(32px, 4vw, 52px);
+    color: var(--white);
+    line-height: 1.15;
+  }
+
+  /* ── TIMELINE ── */
+  .timeline {
+    position: relative;
+    padding-left: 80px;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 24px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--gold), var(--gold) 60%, transparent);
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 64px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .timeline-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .timeline-dot {
+    position: absolute;
+    left: -60px;
+    top: 6px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--navy);
+    border: 2px solid var(--gold);
+    z-index: 2;
+  }
+
+  .timeline-item:first-child .timeline-dot {
+    background: var(--gold);
+    box-shadow: 0 0 20px rgba(201,168,76,0.4);
+  }
+
+  .timeline-year {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--gold);
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+
+  .timeline-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 24px;
+    color: var(--white);
+    margin-bottom: 6px;
+  }
+
+  .timeline-org {
+    font-size: 14px;
+    color: var(--slate);
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+
+  .timeline-impact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .impact-chip {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    padding: 6px 14px;
+    border-radius: 100px;
+    background: rgba(201,168,76,0.08);
+    border: 1px solid rgba(201,168,76,0.15);
+    color: var(--gold-light);
+    letter-spacing: 0.5px;
+  }
+
+  .impact-chip.teal {
+    background: rgba(78,205,196,0.08);
+    border-color: rgba(78,205,196,0.2);
+    color: var(--accent);
+  }
+
+  /* ── IMPACT GRID ── */
+  .impact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+  }
+
+  .impact-card {
+    background: var(--navy-mid);
+    border: 1px solid rgba(201,168,76,0.08);
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .impact-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .impact-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+  }
+
+  .impact-card:nth-child(2)::before {
+    background: linear-gradient(90deg, var(--accent), transparent);
+  }
+
+  .impact-card:nth-child(3)::before {
+    background: linear-gradient(90deg, var(--accent2), transparent);
+  }
+
+  .impact-icon {
+    font-size: 32px;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .impact-card h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    color: var(--white);
+    margin-bottom: 12px;
+  }
+
+  .impact-card p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--slate);
+  }
+
+  .impact-stat {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(201,168,76,0.08);
+  }
+
+  .impact-stat .num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 36px;
+    color: var(--gold);
+  }
+
+  .impact-stat .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--slate);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* ── TECH RADAR ── */
+  .tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+  }
+
+  .tech-category {
+    padding: 32px;
+    background: var(--navy-mid);
+    border: 1px solid rgba(201,168,76,0.06);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .tech-category.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .tech-category h4 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(201,168,76,0.1);
+  }
+
+  .tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .tech-tag {
+    font-size: 13px;
+    padding: 5px 12px;
+    background: rgba(240,242,245,0.04);
+    border-radius: 4px;
+    color: var(--text);
+    transition: all 0.2s;
+  }
+
+  .tech-tag:hover {
+    background: rgba(201,168,76,0.1);
+    color: var(--gold-light);
+  }
+
+  /* ── QUOTE SECTION ── */
+  .philosophy {
+    padding: 120px 10%;
+    text-align: center;
+    position: relative;
+  }
+
+  .philosophy::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(201,168,76,0.03) 0%, transparent 30%, rgba(78,205,196,0.02) 100%);
+  }
+
+  .philosophy blockquote {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(24px, 3.5vw, 42px);
+    color: var(--white);
+    line-height: 1.4;
+    max-width: 900px;
+    margin: 0 auto 32px;
+    position: relative;
+  }
+
+  .philosophy blockquote::before {
+    content: '"';
+    font-size: 120px;
+    color: var(--gold);
+    opacity: 0.15;
+    position: absolute;
+    top: -40px;
+    left: -30px;
+    font-family: 'DM Serif Display', serif;
+  }
+
+  .philosophy .attribution {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  /* ── FOOTER CTA ── */
+  .footer-cta {
+    padding: 80px 10%;
+    text-align: center;
+    border-top: 1px solid rgba(201,168,76,0.1);
+  }
+
+  .footer-cta h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(28px, 3.5vw, 44px);
+    color: var(--white);
+    margin-bottom: 16px;
+  }
+
+  .footer-cta p {
+    color: var(--slate);
+    margin-bottom: 32px;
+    font-size: 16px;
+  }
+
+  .contact-row {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+
+  .contact-item {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--gold);
+    text-decoration: none;
+    padding: 12px 24px;
+    border: 1px solid rgba(201,168,76,0.2);
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .contact-item:hover {
+    background: rgba(201,168,76,0.08);
+    border-color: var(--gold);
+  }
+
+  .contact-item svg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+  }
+
+  .footnote {
+    margin-top: 60px;
+    font-size: 12px;
+    color: rgba(138,155,181,0.4);
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+  }
+
+  @keyframes countUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .hero { padding: 60px 6% 40px; }
+    .section { padding: 60px 6%; }
+    .metric { padding: 32px 20px; }
+    .timeline { padding-left: 50px; }
+    .timeline::before { left: 14px; }
+    .timeline-dot { left: -40px; }
+    .philosophy { padding: 80px 6%; }
+    .footer-cta { padding: 60px 6%; }
+    .contact-row { flex-direction: column; align-items: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="hero-label">Engineering Leadership Portfolio</div>
+  <h1>Building platforms<br>that power <em>Private<br>Wealth</em></h1>
+  <p class="hero-subtitle">
+    20+ years at Goldman Sachs engineering the systems behind client communications, 
+    document generation, and digital transformation for Private Wealth Management.
+  </p>
+  <div class="hero-cta">
+    <a href="mailto:anuraag.verma@gmail.com" class="primary">Get In Touch</a>
+    <a href="https://linkedin.com/in/anuraag-verma" target="_blank">LinkedIn Profile</a>
+  </div>
+  <div class="scroll-indicator">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ═══ METRICS ═══ -->
+<section class="metrics">
+  <div class="metric">
+    <div class="metric-number" data-target="20" data-suffix="+">0</div>
+    <div class="metric-label">Years at<br>Goldman Sachs</div>
+  </div>
+  <div class="metric">
+    <div class="metric-number" data-target="30" data-suffix="+">0</div>
+    <div class="metric-label">Engineers Led<br>Globally</div>
+  </div>
+  <div class="metric">
+    <div class="metric-number" data-target="340" data-prefix="$" data-suffix="M">0</div>
+    <div class="metric-label">Fees Generated<br>via Digitization</div>
+  </div>
+  <div class="metric">
+    <div class="metric-number" data-target="150" data-suffix="+">0</div>
+    <div class="metric-label">Fund Launches<br>Delivered</div>
+  </div>
+  <div class="metric">
+    <div class="metric-number" data-target="15" data-suffix="M+">0</div>
+    <div class="metric-label">Records<br>Consolidated</div>
+  </div>
+</section>
+
+<!-- ═══ JOURNEY ═══ -->
+<section class="section">
+  <div class="section-header">
+    <div class="section-tag">Career Arc</div>
+    <h2>Two Decades of<br>Compounding Impact</h2>
+  </div>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">2023 — Present</div>
+      <div class="timeline-title">Senior Engineering Manager, VP</div>
+      <div class="timeline-org">Client Communication Platform · Wayne, PA</div>
+      <div class="timeline-impact">
+        <span class="impact-chip">Blue-Green Deployment</span>
+        <span class="impact-chip teal">Kafka Ingress Pipeline</span>
+        <span class="impact-chip">75M+ Record Migration</span>
+        <span class="impact-chip teal">Zero-Downtime Releases</span>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">2018 — 2023</div>
+      <div class="timeline-title">Senior Engineering Manager, VP</div>
+      <div class="timeline-org">Client Communication Platform · Salt Lake City, UT</div>
+      <div class="timeline-impact">
+        <span class="impact-chip">Founded Platform from 0→1</span>
+        <span class="impact-chip teal">150+ Fund Launches</span>
+        <span class="impact-chip">$340M Fees</span>
+        <span class="impact-chip teal">93% e-Delivery</span>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">2015 — 2018</div>
+      <div class="timeline-title">Engineering Manager, VP</div>
+      <div class="timeline-org">Client Reporting & Portfolio Accounting · SLC</div>
+      <div class="timeline-impact">
+        <span class="impact-chip">75% Taxlot Compute Gain</span>
+        <span class="impact-chip teal">91% Reconciliation Gain</span>
+        <span class="impact-chip">$1M/yr Print Savings</span>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">2011 — 2015</div>
+      <div class="timeline-title">Engineering Manager, VP</div>
+      <div class="timeline-org">Client Reporting · Salt Lake City, UT</div>
+      <div class="timeline-impact">
+        <span class="impact-chip">4.5M Documents/Year</span>
+        <span class="impact-chip teal">12+ Comm Flows</span>
+        <span class="impact-chip">US & European Regulatory</span>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">2005 — 2011</div>
+      <div class="timeline-title">Lead Application Developer, VP</div>
+      <div class="timeline-org">Client Reporting · Bangalore, India</div>
+      <div class="timeline-impact">
+        <span class="impact-chip">Built BLR Team 2→8</span>
+        <span class="impact-chip teal">Asia & EMEA Business</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ IMPACT PILLARS ═══ -->
+<section class="section" style="background: var(--navy-mid);">
+  <div class="section-header">
+    <div class="section-tag">Signature Outcomes</div>
+    <h2>What I Build &<br>Why It Matters</h2>
+  </div>
+  <div class="impact-grid">
+    <div class="impact-card">
+      <span class="impact-icon">⚡</span>
+      <h3>Platform from Zero</h3>
+      <p>Founded the Client Communication Platform from concept to production — centralizing content creation, multi-channel delivery, and e-signature across 150+ communication types for PWM clients globally.</p>
+      <div class="impact-stat">
+        <div class="num">150+</div>
+        <div class="label">Communication Types</div>
+      </div>
+    </div>
+    <div class="impact-card">
+      <span class="impact-icon">🔄</span>
+      <h3>Digital Transformation</h3>
+      <p>Led multi-year end-to-end digitization of Alternative Investment subscription workflows — automating fund manager onboarding, client documentation, and expanding across multiple Fund Administrators.</p>
+      <div class="impact-stat">
+        <div class="num">$340M</div>
+        <div class="label">In Fees Generated</div>
+      </div>
+    </div>
+    <div class="impact-card">
+      <span class="impact-icon">📊</span>
+      <h3>Data at Scale</h3>
+      <p>Consolidated 15M+ metadata records via Kafka into sub-1-second query stores. Optimized 32M-transaction tax reconciliation by 91%. Benchmarked ingestion across 75M+ records cross-platform.</p>
+      <div class="impact-stat">
+        <div class="num">&lt;1s</div>
+        <div class="label">Query Response Time</div>
+      </div>
+    </div>
+    <div class="impact-card">
+      <span class="impact-icon">🌏</span>
+      <h3>Global Team Builder</h3>
+      <p>Built engineering orgs from the ground up across US, India, and EMEA — hiring, establishing structures, managing managers, driving promotions, and mentoring engineers on multi-year career trajectories.</p>
+      <div class="impact-stat">
+        <div class="num">30+</div>
+        <div class="label">Engineers Across 4 Sites</div>
+      </div>
+    </div>
+    <div class="impact-card">
+      <span class="impact-icon">🛡️</span>
+      <h3>Operational Excellence</h3>
+      <p>Blue-green deployments with canary rollout. DORA metrics for continuous improvement. Full observability stack (Prometheus, Grafana, ELK, OpenTelemetry). Highest test maturity across all components.</p>
+      <div class="impact-stat">
+        <div class="num">0</div>
+        <div class="label">Downtime Deployments</div>
+      </div>
+    </div>
+    <div class="impact-card">
+      <span class="impact-icon">🤝</span>
+      <h3>Stakeholder Partner</h3>
+      <p>Trusted technology partner to senior stakeholders across Product, Operations, Legal, and Compliance — translating business priorities into multi-year roadmaps and KPI-driven delivery plans.</p>
+      <div class="impact-stat">
+        <div class="num">MiFID II</div>
+        <div class="label">FINRA · Swiss Banking</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PHILOSOPHY ═══ -->
+<section class="philosophy">
+  <blockquote>
+    The best platforms disappear — they're so reliable, so well-integrated, that the business forgets there's engineering behind them. That invisibility is the highest compliment.
+  </blockquote>
+  <div class="attribution">— My Philosophy on Platform Engineering</div>
+</section>
+
+<!-- ═══ TECH STACK ═══ -->
+<section class="section">
+  <div class="section-header">
+    <div class="section-tag">Technical Depth</div>
+    <h2>Built With</h2>
+  </div>
+  <div class="tech-grid">
+    <div class="tech-category">
+      <h4>Architecture</h4>
+      <div class="tech-tags">
+        <span class="tech-tag">Distributed Systems</span>
+        <span class="tech-tag">Event-Driven</span>
+        <span class="tech-tag">SOA</span>
+        <span class="tech-tag">API Design</span>
+        <span class="tech-tag">Blue-Green</span>
+        <span class="tech-tag">Canary Releases</span>
+      </div>
+    </div>
+    <div class="tech-category">
+      <h4>Data & Streaming</h4>
+      <div class="tech-tags">
+        <span class="tech-tag">Apache Kafka</span>
+        <span class="tech-tag">MongoDB</span>
+        <span class="tech-tag">Sybase ASE</span>
+        <span class="tech-tag">Data Lake</span>
+        <span class="tech-tag">Doc Lifecycle</span>
+      </div>
+    </div>
+    <div class="tech-category">
+      <h4>Observability</h4>
+      <div class="tech-tags">
+        <span class="tech-tag">Prometheus</span>
+        <span class="tech-tag">Grafana</span>
+        <span class="tech-tag">ELK Stack</span>
+        <span class="tech-tag">OpenTelemetry</span>
+        <span class="tech-tag">Jaeger</span>
+        <span class="tech-tag">DORA Metrics</span>
+      </div>
+    </div>
+    <div class="tech-category">
+      <h4>Development</h4>
+      <div class="tech-tags">
+        <span class="tech-tag">Java</span>
+        <span class="tech-tag">Python</span>
+        <span class="tech-tag">Spring</span>
+        <span class="tech-tag">REST</span>
+        <span class="tech-tag">Apache Camel</span>
+        <span class="tech-tag">Kubernetes</span>
+      </div>
+    </div>
+    <div class="tech-category">
+      <h4>Leadership</h4>
+      <div class="tech-tags">
+        <span class="tech-tag">Strategy & Roadmaps</span>
+        <span class="tech-tag">Product Management</span>
+        <span class="tech-tag">Vendor Management</span>
+        <span class="tech-tag">Agile</span>
+        <span class="tech-tag">Global Teams</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER CTA ═══ -->
+<section class="footer-cta">
+  <h2>Let's Talk</h2>
+  <p>Open to senior engineering leadership roles in Finance & FinTech — Greater Philadelphia & New York metro</p>
+  <div class="contact-row">
+    <a href="mailto:anuraag.verma@gmail.com" class="contact-item">
+      <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+      anuraag.verma@gmail.com
+    </a>
+    <a href="tel:8015992612" class="contact-item">
+      <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+      (801) 599-2612
+    </a>
+    <a href="https://linkedin.com/in/anuraag-verma" target="_blank" class="contact-item">
+      <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+      LinkedIn
+    </a>
+  </div>
+  <p class="footnote">Anuraag Verma · Senior Engineering Leader · Wealth & Asset Management Technology</p>
+</section>
+
+<script>
+  // ── Counter Animation ──
+  function animateCounters() {
+    document.querySelectorAll('.metric-number').forEach(el => {
+      const target = parseInt(el.dataset.target);
+      const prefix = el.dataset.prefix || '';
+      const suffix = el.dataset.suffix || '';
+      const duration = 1800;
+      const start = performance.now();
+
+      function update(now) {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const current = Math.round(target * eased);
+        el.textContent = prefix + current + suffix;
+        if (progress < 1) requestAnimationFrame(update);
+      }
+      requestAnimationFrame(update);
+    });
+  }
+
+  // ── Intersection Observer ──
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        
+        if (entry.target.classList.contains('metrics')) {
+          animateCounters();
+        }
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+
+  document.querySelectorAll('.timeline-item, .impact-card, .tech-category').forEach(el => {
+    observer.observe(el);
+  });
+
+  // Observe metrics section
+  const metricsSection = document.querySelector('.metrics');
+  if (metricsSection) observer.observe(metricsSection);
+
+  // ── Staggered animations ──
+  document.querySelectorAll('.impact-grid .impact-card').forEach((card, i) => {
+    card.style.transitionDelay = `${i * 0.1}s`;
+  });
+
+  document.querySelectorAll('.tech-category').forEach((cat, i) => {
+    cat.style.transitionDelay = `${i * 0.08}s`;
+  });
+
+  document.querySelectorAll('.timeline-item').forEach((item, i) => {
+    item.style.transitionDelay = `${i * 0.15}s`;
+  });
+</script>
+
+</body>
+</html>
