@@ -4,919 +4,477 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Anuraag Verma — Engineering Leadership Story</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Anuraag Verma — Senior Engineering Leader">
+<meta property="og:description" content="20+ years at Goldman Sachs building platforms that power Private Wealth Management. Led global teams of 30+ engineers, drove $340M in fees through digital transformation.">
+<meta property="og:url" content="https://anuraagverma.com">
+<meta property="og:site_name" content="Anuraag Verma">
+<meta property="og:image" content="https://anuraagverma.com/og-preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Anuraag Verma — Senior Engineering Leader">
+<meta name="twitter:description" content="20+ years at Goldman Sachs. $340M fees via digitization. 30+ engineers led globally.">
+<meta name="description" content="Anuraag Verma — Senior Engineering Leader with 20+ years at Goldman Sachs in Wealth & Asset Management Technology.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --gold: #C9A84C;
-    --gold-light: #E8D48B;
-    --navy: #0A1628;
-    --navy-mid: #142238;
-    --navy-light: #1C3050;
-    --slate: #8A9BB5;
-    --white: #F0F2F5;
-    --accent: #4ECDC4;
-    --accent2: #FF6B6B;
-    --text: #CBD5E1;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    font-family: 'Instrument Sans', sans-serif;
-    background: var(--navy);
-    color: var(--text);
-    overflow-x: hidden;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  /* ── HERO ── */
-  .hero {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 80px 10% 60px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: -200px;
-    right: -200px;
-    width: 700px;
-    height: 700px;
-    background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%);
-    pointer-events: none;
-  }
-
-  .hero::after {
-    content: '';
-    position: absolute;
-    bottom: -100px;
-    left: -100px;
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, rgba(78,205,196,0.05) 0%, transparent 70%);
-    pointer-events: none;
-  }
-
-  .hero-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 24px;
-    opacity: 0;
-    animation: fadeUp 0.8s 0.2s forwards;
-  }
-
-  .hero h1 {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(48px, 7vw, 96px);
-    color: var(--white);
-    line-height: 1.05;
-    margin-bottom: 24px;
-    opacity: 0;
-    animation: fadeUp 0.8s 0.4s forwards;
-  }
-
-  .hero h1 em {
-    color: var(--gold);
-    font-style: italic;
-  }
-
-  .hero-subtitle {
-    font-size: clamp(18px, 2.2vw, 24px);
-    color: var(--slate);
-    max-width: 680px;
-    line-height: 1.6;
-    margin-bottom: 48px;
-    opacity: 0;
-    animation: fadeUp 0.8s 0.6s forwards;
-  }
-
-  .hero-cta {
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-    opacity: 0;
-    animation: fadeUp 0.8s 0.8s forwards;
-  }
-
-  .hero-cta a {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 13px;
-    letter-spacing: 1px;
-    padding: 14px 28px;
-    border: 1px solid var(--gold);
-    color: var(--gold);
-    text-decoration: none;
-    transition: all 0.3s;
-  }
-
-  .hero-cta a:hover {
-    background: var(--gold);
-    color: var(--navy);
-  }
-
-  .hero-cta a.primary {
-    background: var(--gold);
-    color: var(--navy);
-    font-weight: 600;
-  }
-
-  .hero-cta a.primary:hover {
-    background: var(--gold-light);
-  }
-
-  .scroll-indicator {
-    position: absolute;
-    bottom: 40px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    opacity: 0;
-    animation: fadeUp 0.8s 1.2s forwards;
-  }
-
-  .scroll-indicator span {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--slate);
-  }
-
-  .scroll-line {
-    width: 1px;
-    height: 40px;
-    background: linear-gradient(to bottom, var(--gold), transparent);
-    animation: scrollPulse 2s infinite;
-  }
-
-  /* ── METRICS STRIP ── */
-  .metrics {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    border-top: 1px solid rgba(201,168,76,0.15);
-    border-bottom: 1px solid rgba(201,168,76,0.15);
-  }
-
-  .metric {
-    padding: 48px 40px;
-    text-align: center;
-    border-right: 1px solid rgba(201,168,76,0.08);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .metric::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, rgba(201,168,76,0.03) 0%, transparent 50%);
-    opacity: 0;
-    transition: opacity 0.4s;
-  }
-
-  .metric:hover::before { opacity: 1; }
-
-  .metric-number {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(36px, 4vw, 56px);
-    color: var(--gold);
-    line-height: 1;
-    margin-bottom: 8px;
-  }
-
-  .metric-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--slate);
-    line-height: 1.5;
-  }
-
-  /* ── SECTIONS ── */
-  .section {
-    padding: 100px 10%;
-    position: relative;
-  }
-
-  .section-header {
-    margin-bottom: 64px;
-  }
-
-  .section-tag {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 16px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .section-tag::before {
-    content: '';
-    width: 40px;
-    height: 1px;
-    background: var(--gold);
-  }
-
-  .section h2 {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(32px, 4vw, 52px);
-    color: var(--white);
-    line-height: 1.15;
-  }
-
-  /* ── TIMELINE ── */
-  .timeline {
-    position: relative;
-    padding-left: 80px;
-  }
-
-  .timeline::before {
-    content: '';
-    position: absolute;
-    left: 24px;
-    top: 0;
-    bottom: 0;
-    width: 1px;
-    background: linear-gradient(to bottom, var(--gold), var(--gold) 60%, transparent);
-  }
-
-  .timeline-item {
-    position: relative;
-    margin-bottom: 64px;
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .timeline-item.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .timeline-dot {
-    position: absolute;
-    left: -60px;
-    top: 6px;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: var(--navy);
-    border: 2px solid var(--gold);
-    z-index: 2;
-  }
-
-  .timeline-item:first-child .timeline-dot {
-    background: var(--gold);
-    box-shadow: 0 0 20px rgba(201,168,76,0.4);
-  }
-
-  .timeline-year {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 13px;
-    color: var(--gold);
-    letter-spacing: 1px;
-    margin-bottom: 8px;
-  }
-
-  .timeline-title {
-    font-family: 'DM Serif Display', serif;
-    font-size: 24px;
-    color: var(--white);
-    margin-bottom: 6px;
-  }
-
-  .timeline-org {
-    font-size: 14px;
-    color: var(--slate);
-    margin-bottom: 16px;
-    font-weight: 500;
-  }
-
-  .timeline-impact {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-
-  .impact-chip {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    padding: 6px 14px;
-    border-radius: 100px;
-    background: rgba(201,168,76,0.08);
-    border: 1px solid rgba(201,168,76,0.15);
-    color: var(--gold-light);
-    letter-spacing: 0.5px;
-  }
-
-  .impact-chip.teal {
-    background: rgba(78,205,196,0.08);
-    border-color: rgba(78,205,196,0.2);
-    color: var(--accent);
-  }
-
-  /* ── IMPACT GRID ── */
-  .impact-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 24px;
-  }
-
-  .impact-card {
-    background: var(--navy-mid);
-    border: 1px solid rgba(201,168,76,0.08);
-    padding: 40px;
-    position: relative;
-    overflow: hidden;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .impact-card.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .impact-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, var(--gold), transparent);
-  }
-
-  .impact-card:nth-child(2)::before {
-    background: linear-gradient(90deg, var(--accent), transparent);
-  }
-
-  .impact-card:nth-child(3)::before {
-    background: linear-gradient(90deg, var(--accent2), transparent);
-  }
-
-  .impact-icon {
-    font-size: 32px;
-    margin-bottom: 20px;
-    display: block;
-  }
-
-  .impact-card h3 {
-    font-family: 'DM Serif Display', serif;
-    font-size: 22px;
-    color: var(--white);
-    margin-bottom: 12px;
-  }
-
-  .impact-card p {
-    font-size: 15px;
-    line-height: 1.7;
-    color: var(--slate);
-  }
-
-  .impact-stat {
-    margin-top: 20px;
-    padding-top: 20px;
-    border-top: 1px solid rgba(201,168,76,0.08);
-  }
-
-  .impact-stat .num {
-    font-family: 'DM Serif Display', serif;
-    font-size: 36px;
-    color: var(--gold);
-  }
-
-  .impact-stat .label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    color: var(--slate);
-    letter-spacing: 1px;
-    text-transform: uppercase;
-  }
-
-  /* ── TECH RADAR ── */
-  .tech-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 20px;
-  }
-
-  .tech-category {
-    padding: 32px;
-    background: var(--navy-mid);
-    border: 1px solid rgba(201,168,76,0.06);
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .tech-category.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .tech-category h4 {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 16px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid rgba(201,168,76,0.1);
-  }
-
-  .tech-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-
-  .tech-tag {
-    font-size: 13px;
-    padding: 5px 12px;
-    background: rgba(240,242,245,0.04);
-    border-radius: 4px;
-    color: var(--text);
-    transition: all 0.2s;
-  }
-
-  .tech-tag:hover {
-    background: rgba(201,168,76,0.1);
-    color: var(--gold-light);
-  }
-
-  /* ── QUOTE SECTION ── */
-  .philosophy {
-    padding: 120px 10%;
-    text-align: center;
-    position: relative;
-  }
-
-  .philosophy::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, rgba(201,168,76,0.03) 0%, transparent 30%, rgba(78,205,196,0.02) 100%);
-  }
-
-  .philosophy blockquote {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(24px, 3.5vw, 42px);
-    color: var(--white);
-    line-height: 1.4;
-    max-width: 900px;
-    margin: 0 auto 32px;
-    position: relative;
-  }
-
-  .philosophy blockquote::before {
-    content: '"';
-    font-size: 120px;
-    color: var(--gold);
-    opacity: 0.15;
-    position: absolute;
-    top: -40px;
-    left: -30px;
-    font-family: 'DM Serif Display', serif;
-  }
-
-  .philosophy .attribution {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--gold);
-  }
-
-  /* ── FOOTER CTA ── */
-  .footer-cta {
-    padding: 80px 10%;
-    text-align: center;
-    border-top: 1px solid rgba(201,168,76,0.1);
-  }
-
-  .footer-cta h2 {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(28px, 3.5vw, 44px);
-    color: var(--white);
-    margin-bottom: 16px;
-  }
-
-  .footer-cta p {
-    color: var(--slate);
-    margin-bottom: 32px;
-    font-size: 16px;
-  }
-
-  .contact-row {
-    display: flex;
-    justify-content: center;
-    gap: 32px;
-    flex-wrap: wrap;
-  }
-
-  .contact-item {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 13px;
-    color: var(--gold);
-    text-decoration: none;
-    padding: 12px 24px;
-    border: 1px solid rgba(201,168,76,0.2);
-    transition: all 0.3s;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .contact-item:hover {
-    background: rgba(201,168,76,0.08);
-    border-color: var(--gold);
-  }
-
-  .contact-item svg {
-    width: 16px;
-    height: 16px;
-    fill: currentColor;
-  }
-
-  .footnote {
-    margin-top: 60px;
-    font-size: 12px;
-    color: rgba(138,155,181,0.4);
-  }
-
-  /* ── ANIMATIONS ── */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(24px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  @keyframes scrollPulse {
-    0%, 100% { opacity: 0.3; }
-    50% { opacity: 1; }
-  }
-
-  @keyframes countUp {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  /* ── RESPONSIVE ── */
-  @media (max-width: 768px) {
-    .hero { padding: 60px 6% 40px; }
-    .section { padding: 60px 6%; }
-    .metric { padding: 32px 20px; }
-    .timeline { padding-left: 50px; }
-    .timeline::before { left: 14px; }
-    .timeline-dot { left: -40px; }
-    .philosophy { padding: 80px 6%; }
-    .footer-cta { padding: 60px 6%; }
-    .contact-row { flex-direction: column; align-items: center; }
-  }
+:root {
+  --gold: #C9A84C;
+  --gold-light: #E8D48B;
+  --gold-dim: rgba(201,168,76,0.12);
+  --navy: #080E1A;
+  --navy-mid: #0F1929;
+  --navy-card: #131F33;
+  --navy-light: #1A2940;
+  --slate: #7E90A8;
+  --white: #ECF0F6;
+  --accent: #4ECDC4;
+  --accent-dim: rgba(78,205,196,0.12);
+  --coral: #FF6B6B;
+  --coral-dim: rgba(255,107,107,0.12);
+  --text: #B0BFCF;
+  --radius: 10px;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:'Outfit',sans-serif;background:var(--navy);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 6%;height:64px;display:flex;align-items:center;justify-content:space-between;background:rgba(8,14,26,0.65);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(201,168,76,0);transition:border-color 0.4s,background 0.4s}
+.nav.scrolled{background:rgba(8,14,26,0.92);border-bottom-color:rgba(201,168,76,0.1)}
+.nav-logo{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--white);letter-spacing:0.5px}
+.nav-logo span{color:var(--gold)}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{font-size:13px;font-weight:500;color:var(--slate);text-decoration:none;letter-spacing:0.5px;transition:color 0.3s;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--gold);transition:width 0.3s}
+.nav-links a:hover{color:var(--gold)}
+.nav-links a:hover::after{width:100%}
+.nav-cta{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;padding:8px 20px;background:var(--gold);color:var(--navy);text-decoration:none;font-weight:500;border-radius:4px;transition:all 0.3s}
+.nav-cta:hover{background:var(--gold-light);transform:translateY(-1px)}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:120px 10% 80px;position:relative;overflow:hidden}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(201,168,76,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,0.04) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 70% 60% at 50% 50%,black 30%,transparent 70%);-webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 50%,black 30%,transparent 70%);animation:gridDrift 20s linear infinite}
+@keyframes gridDrift{0%{transform:translate(0,0)}100%{transform:translate(60px,60px)}}
+.hero-orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;animation:orbFloat 8s ease-in-out infinite alternate}
+.hero-orb-1{width:500px;height:500px;top:-10%;right:-5%;background:rgba(201,168,76,0.07)}
+.hero-orb-2{width:350px;height:350px;bottom:5%;left:-3%;background:rgba(78,205,196,0.05);animation-delay:-4s}
+@keyframes orbFloat{0%{transform:translate(0,0) scale(1)}100%{transform:translate(30px,-20px) scale(1.1)}}
+.hero-content{position:relative;z-index:2}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:28px;opacity:0;animation:fadeUp 0.7s 0.1s forwards}
+.hero-eyebrow::before{content:'';width:32px;height:1px;background:var(--gold)}
+.hero-name{font-family:'Playfair Display',serif;font-size:clamp(52px,8vw,110px);font-weight:700;color:var(--white);line-height:1;margin-bottom:16px;opacity:0;animation:fadeUp 0.7s 0.25s forwards}
+.hero-name em{font-style:italic;color:var(--gold);display:block}
+.hero-tagline{font-size:clamp(18px,2.4vw,26px);font-weight:300;color:var(--slate);max-width:640px;line-height:1.55;margin-bottom:44px;opacity:0;animation:fadeUp 0.7s 0.4s forwards}
+.hero-tagline strong{color:var(--white);font-weight:500}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap;align-items:center;opacity:0;animation:fadeUp 0.7s 0.55s forwards}
+.btn{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;padding:14px 30px;text-decoration:none;border-radius:4px;transition:all 0.3s;display:inline-flex;align-items:center;gap:8px;font-weight:500}
+.btn-primary{background:var(--gold);color:var(--navy)}
+.btn-primary:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 30px rgba(201,168,76,0.2)}
+.btn-outline{border:1px solid rgba(201,168,76,0.3);color:var(--gold);background:transparent}
+.btn-outline:hover{background:rgba(201,168,76,0.08);border-color:var(--gold)}
+.btn svg{width:14px;height:14px;fill:currentColor}
+.scroll-cue{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;opacity:0;animation:fadeUp 0.7s 1s forwards}
+.scroll-cue span{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--slate)}
+.scroll-cue-line{width:1px;height:36px;background:linear-gradient(to bottom,var(--gold),transparent);animation:scrollPulse 2.5s ease-in-out infinite}
+
+/* METRICS */
+.metrics-ribbon{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid rgba(201,168,76,0.1);border-bottom:1px solid rgba(201,168,76,0.1)}
+.metric-cell{padding:52px 24px;text-align:center;position:relative;cursor:default}
+.metric-cell+.metric-cell::before{content:'';position:absolute;left:0;top:20%;bottom:20%;width:1px;background:rgba(201,168,76,0.08)}
+.metric-cell:hover .metric-val{transform:scale(1.08)}
+.metric-val{font-family:'Playfair Display',serif;font-size:clamp(32px,4vw,54px);font-weight:700;color:var(--gold);line-height:1;margin-bottom:10px;transition:transform 0.3s}
+.metric-desc{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--slate);line-height:1.6}
+
+/* SECTIONS */
+.section{padding:110px 10%;position:relative}
+.section-head{margin-bottom:72px}
+.section-label{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:inline-flex;align-items:center;gap:12px}
+.section-label::before{content:'';width:36px;height:1px;background:var(--gold)}
+.section h2{font-family:'Playfair Display',serif;font-size:clamp(32px,4.5vw,56px);font-weight:700;color:var(--white);line-height:1.12}
+.section-subtitle{font-size:17px;color:var(--slate);max-width:560px;line-height:1.7;margin-top:16px}
+
+/* TIMELINE */
+.timeline{position:relative;max-width:1000px}
+.timeline-line{position:absolute;left:28px;top:0;width:2px;height:100%;background:var(--navy-light);border-radius:1px;overflow:hidden}
+.timeline-line-fill{width:100%;height:0%;background:linear-gradient(to bottom,var(--gold),var(--accent));border-radius:1px;transition:height 1.2s ease-out}
+.tl-item{position:relative;padding-left:80px;padding-bottom:60px;opacity:0;transform:translateY(30px);transition:all 0.6s cubic-bezier(0.16,1,0.3,1)}
+.tl-item.visible{opacity:1;transform:translateY(0)}
+.tl-marker{position:absolute;left:18px;top:4px;width:22px;height:22px;border-radius:50%;border:2px solid var(--navy-light);background:var(--navy);z-index:2;display:flex;align-items:center;justify-content:center;transition:all 0.4s}
+.tl-item.visible .tl-marker{border-color:var(--gold)}
+.tl-marker-dot{width:8px;height:8px;border-radius:50%;background:var(--navy-light);transition:all 0.4s}
+.tl-item.visible .tl-marker-dot{background:var(--gold);box-shadow:0 0 12px rgba(201,168,76,0.5)}
+.tl-item:first-child.visible .tl-marker{border-color:var(--gold);background:rgba(201,168,76,0.1)}
+.tl-item:first-child.visible .tl-marker-dot{box-shadow:0 0 20px rgba(201,168,76,0.6)}
+.tl-period{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--gold);letter-spacing:1.5px;margin-bottom:6px}
+.tl-role{font-family:'Playfair Display',serif;font-size:clamp(20px,2.5vw,26px);color:var(--white);margin-bottom:4px;font-weight:700}
+.tl-org{font-size:14px;color:var(--slate);margin-bottom:14px;display:flex;align-items:center;gap:6px}
+.tl-org svg{width:14px;height:14px;fill:var(--slate);flex-shrink:0}
+.tl-narrative{font-size:15px;line-height:1.75;color:var(--text);max-width:600px;margin-bottom:16px}
+.tl-chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.5px;padding:5px 14px;border-radius:100px;background:var(--gold-dim);border:1px solid rgba(201,168,76,0.15);color:var(--gold-light)}
+.chip.teal{background:var(--accent-dim);border-color:rgba(78,205,196,0.2);color:var(--accent)}
+.chip.coral{background:var(--coral-dim);border-color:rgba(255,107,107,0.2);color:var(--coral)}
+
+/* IMPACT CARDS */
+.impact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px}
+.impact-card{background:var(--navy-card);border:1px solid rgba(201,168,76,0.06);border-radius:var(--radius);padding:36px;position:relative;overflow:hidden;opacity:0;transform:translateY(24px);transition:all 0.55s cubic-bezier(0.16,1,0.3,1)}
+.impact-card.visible{opacity:1;transform:translateY(0)}
+.impact-card:hover{border-color:rgba(201,168,76,0.15);transform:translateY(-4px);box-shadow:0 20px 50px rgba(0,0,0,0.3)}
+.impact-card::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:var(--radius) var(--radius) 0 0}
+.impact-card:nth-child(1)::after{background:linear-gradient(90deg,var(--gold),rgba(201,168,76,0.2))}
+.impact-card:nth-child(2)::after{background:linear-gradient(90deg,var(--accent),rgba(78,205,196,0.2))}
+.impact-card:nth-child(3)::after{background:linear-gradient(90deg,var(--coral),rgba(255,107,107,0.2))}
+.impact-card:nth-child(4)::after{background:linear-gradient(90deg,#A78BFA,rgba(167,139,250,0.2))}
+.impact-card:nth-child(5)::after{background:linear-gradient(90deg,#60A5FA,rgba(96,165,250,0.2))}
+.impact-card:nth-child(6)::after{background:linear-gradient(90deg,#FBBF24,rgba(251,191,36,0.2))}
+.card-icon{width:48px;height:48px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:20px}
+.card-icon.gold{background:var(--gold-dim)}
+.card-icon.teal{background:var(--accent-dim)}
+.card-icon.coral{background:var(--coral-dim)}
+.card-icon.purple{background:rgba(167,139,250,0.12)}
+.card-icon.blue{background:rgba(96,165,250,0.12)}
+.card-icon.amber{background:rgba(251,191,36,0.12)}
+.impact-card h3{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--white);margin-bottom:10px}
+.impact-card p{font-size:14px;line-height:1.7;color:var(--slate)}
+.card-stat{margin-top:24px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.04);display:flex;align-items:baseline;gap:10px}
+.card-stat-num{font-family:'Playfair Display',serif;font-size:34px;font-weight:700;color:var(--gold);line-height:1}
+.card-stat-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--slate)}
+
+/* GAINS */
+.gains-section{background:var(--navy-mid)}
+.gains-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:32px}
+.gain-item{opacity:0;transform:translateY(20px);transition:all 0.5s cubic-bezier(0.16,1,0.3,1)}
+.gain-item.visible{opacity:1;transform:translateY(0)}
+.gain-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px}
+.gain-label{font-size:15px;font-weight:500;color:var(--white)}
+.gain-pct{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--gold)}
+.gain-bar-track{height:8px;background:rgba(255,255,255,0.04);border-radius:4px;overflow:hidden;margin-bottom:8px}
+.gain-bar-fill{height:100%;border-radius:4px;width:0%;transition:width 1.4s cubic-bezier(0.16,1,0.3,1)}
+.gain-bar-fill.gold{background:linear-gradient(90deg,var(--gold),var(--gold-light))}
+.gain-bar-fill.teal{background:linear-gradient(90deg,var(--accent),#80E8E0)}
+.gain-bar-fill.coral{background:linear-gradient(90deg,var(--coral),#FF9999)}
+.gain-desc{font-size:12px;color:var(--slate)}
+
+/* GLOBAL MAP */
+.map-container{display:flex;gap:48px;align-items:center;flex-wrap:wrap}
+.map-svg-wrap{flex:1;min-width:320px}
+.map-legend{flex:0 0 280px}
+.map-site{padding:20px 0;border-bottom:1px solid rgba(255,255,255,0.04);opacity:0;transform:translateX(20px);transition:all 0.5s cubic-bezier(0.16,1,0.3,1)}
+.map-site.visible{opacity:1;transform:translateX(0)}
+.map-site-name{font-family:'Playfair Display',serif;font-size:18px;color:var(--white);margin-bottom:4px}
+.map-site-detail{font-size:13px;color:var(--slate);line-height:1.5}
+.map-dot{fill:var(--gold);opacity:0;animation:mapPing 3s ease-in-out infinite}
+.map-dot:nth-child(2){animation-delay:0.5s}
+.map-dot:nth-child(3){animation-delay:1s}
+.map-dot:nth-child(4){animation-delay:1.5s}
+@keyframes mapPing{0%,100%{opacity:0.5;r:5}50%{opacity:1;r:8}}
+.map-dot-ring{fill:none;stroke:var(--gold);stroke-width:1;opacity:0;animation:ringPulse 3s ease-in-out infinite}
+.map-dot-ring:nth-of-type(2){animation-delay:0.5s}
+.map-dot-ring:nth-of-type(3){animation-delay:1s}
+.map-dot-ring:nth-of-type(4){animation-delay:1.5s}
+@keyframes ringPulse{0%{opacity:0.6;r:6}100%{opacity:0;r:22}}
+
+/* SPEAKING */
+.speaking-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.speaking-card{background:var(--navy-card);border:1px solid rgba(255,255,255,0.04);border-radius:var(--radius);padding:32px;opacity:0;transform:translateY(20px);transition:all 0.5s cubic-bezier(0.16,1,0.3,1)}
+.speaking-card.visible{opacity:1;transform:translateY(0)}
+.speaking-card:hover{border-color:rgba(201,168,76,0.12)}
+.speaking-venue{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.speaking-title{font-family:'Playfair Display',serif;font-size:18px;color:var(--white);margin-bottom:8px}
+.speaking-desc{font-size:13px;color:var(--slate);line-height:1.6}
+
+/* PHILOSOPHY */
+.philosophy{padding:120px 10%;text-align:center;position:relative;overflow:hidden}
+.philosophy::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 50% at 50% 50%,rgba(201,168,76,0.04),transparent)}
+.quote-marks{font-family:'Playfair Display',serif;font-size:160px;color:var(--gold);opacity:0.08;line-height:0.6;margin-bottom:-20px;display:block;position:relative}
+.philosophy blockquote{font-family:'Playfair Display',serif;font-size:clamp(22px,3.2vw,40px);font-style:italic;color:var(--white);line-height:1.45;max-width:850px;margin:0 auto 28px;position:relative}
+.philosophy .attribution{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold)}
+
+/* TECH */
+.tech-columns{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:20px}
+.tech-col{background:var(--navy-card);border:1px solid rgba(255,255,255,0.03);border-radius:var(--radius);padding:28px;opacity:0;transform:translateY(20px);transition:all 0.5s cubic-bezier(0.16,1,0.3,1)}
+.tech-col.visible{opacity:1;transform:translateY(0)}
+.tech-col:hover{border-color:rgba(201,168,76,0.1)}
+.tech-col h4{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid rgba(201,168,76,0.08)}
+.tech-pills{display:flex;flex-wrap:wrap;gap:6px}
+.tech-pill{font-size:12px;font-weight:500;padding:5px 12px;border-radius:4px;background:rgba(255,255,255,0.03);color:var(--text);transition:all 0.25s}
+.tech-pill:hover{background:var(--gold-dim);color:var(--gold-light)}
+
+/* FOOTER */
+.footer-cta{padding:100px 10%;text-align:center;border-top:1px solid rgba(201,168,76,0.08)}
+.footer-cta h2{font-family:'Playfair Display',serif;font-size:clamp(30px,4vw,52px);font-weight:700;color:var(--white);margin-bottom:12px}
+.footer-cta .subtitle{color:var(--slate);font-size:17px;margin-bottom:40px;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.6}
+.contact-cards{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-bottom:48px}
+.contact-card{display:flex;align-items:center;gap:12px;padding:16px 28px;background:var(--navy-card);border:1px solid rgba(201,168,76,0.08);border-radius:var(--radius);text-decoration:none;color:var(--gold);font-family:'JetBrains Mono',monospace;font-size:13px;transition:all 0.3s}
+.contact-card:hover{background:var(--gold-dim);border-color:rgba(201,168,76,0.25);transform:translateY(-2px)}
+.contact-card svg{width:18px;height:18px;fill:currentColor;flex-shrink:0}
+.footer-note{font-size:12px;color:rgba(126,144,168,0.4)}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes scrollPulse{0%,100%{opacity:0.2}50%{opacity:1}}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .nav-links,.nav-cta{display:none}
+  .metrics-ribbon{grid-template-columns:repeat(3,1fr)}
+  .map-container{flex-direction:column}
+  .map-legend{flex:none;width:100%}
+}
+@media(max-width:640px){
+  .hero{padding:100px 6% 60px}
+  .section{padding:72px 6%}
+  .metrics-ribbon{grid-template-columns:repeat(2,1fr)}
+  .tl-item{padding-left:56px}
+  .timeline-line{left:18px}
+  .tl-marker{left:8px}
+  .philosophy{padding:80px 6%}
+  .footer-cta{padding:64px 6%}
+  .contact-cards{flex-direction:column;align-items:center}
+}
 </style>
 </head>
 <body>
 
-<!-- ═══ HERO ═══ -->
-<section class="hero">
-  <div class="hero-label">Engineering Leadership Portfolio</div>
-  <h1>Building platforms<br>that power <em>Private<br>Wealth</em></h1>
-  <p class="hero-subtitle">
-    20+ years at Goldman Sachs engineering the systems behind client communications, 
-    document generation, and digital transformation for Private Wealth Management.
-  </p>
-  <div class="hero-cta">
-    <a href="mailto:anuraag.verma@gmail.com" class="primary">Get In Touch</a>
-    <a href="https://linkedin.com/in/anuraag-verma" target="_blank">LinkedIn Profile</a>
+<nav class="nav" id="nav">
+  <div class="nav-logo">A<span>V</span></div>
+  <ul class="nav-links">
+    <li><a href="#journey">Journey</a></li>
+    <li><a href="#impact">Impact</a></li>
+    <li><a href="#gains">Results</a></li>
+    <li><a href="#global">Global</a></li>
+    <li><a href="#tech">Tech</a></li>
+  </ul>
+  <a href="mailto:anuraag.verma@gmail.com" class="nav-cta">Let's Talk</a>
+</nav>
+
+<section class="hero" id="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Engineering Leadership</div>
+    <h1 class="hero-name">Anuraag<em>Verma</em></h1>
+    <p class="hero-tagline"><strong>20+ years at Goldman Sachs</strong> engineering the platforms behind client communications, document generation &amp; digital transformation for <strong>Private Wealth Management</strong>.</p>
+    <div class="hero-actions">
+      <a href="mailto:anuraag.verma@gmail.com" class="btn btn-primary"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>Get In Touch</a>
+      <a href="https://linkedin.com/in/anuraag-verma" target="_blank" class="btn btn-outline"><svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>LinkedIn</a>
+    </div>
   </div>
-  <div class="scroll-indicator">
-    <span>Scroll</span>
-    <div class="scroll-line"></div>
-  </div>
+  <div class="scroll-cue"><span>Explore</span><div class="scroll-cue-line"></div></div>
 </section>
 
-<!-- ═══ METRICS ═══ -->
-<section class="metrics">
-  <div class="metric">
-    <div class="metric-number" data-target="20" data-suffix="+">0</div>
-    <div class="metric-label">Years at<br>Goldman Sachs</div>
-  </div>
-  <div class="metric">
-    <div class="metric-number" data-target="30" data-suffix="+">0</div>
-    <div class="metric-label">Engineers Led<br>Globally</div>
-  </div>
-  <div class="metric">
-    <div class="metric-number" data-target="340" data-prefix="$" data-suffix="M">0</div>
-    <div class="metric-label">Fees Generated<br>via Digitization</div>
-  </div>
-  <div class="metric">
-    <div class="metric-number" data-target="150" data-suffix="+">0</div>
-    <div class="metric-label">Fund Launches<br>Delivered</div>
-  </div>
-  <div class="metric">
-    <div class="metric-number" data-target="15" data-suffix="M+">0</div>
-    <div class="metric-label">Records<br>Consolidated</div>
-  </div>
+<section class="metrics-ribbon" id="metrics">
+  <div class="metric-cell"><div class="metric-val" data-target="20" data-suffix="+">0</div><div class="metric-desc">Years at<br>Goldman Sachs</div></div>
+  <div class="metric-cell"><div class="metric-val" data-target="30" data-suffix="+">0</div><div class="metric-desc">Engineers Led<br>Globally</div></div>
+  <div class="metric-cell"><div class="metric-val" data-target="340" data-prefix="$" data-suffix="M">0</div><div class="metric-desc">Revenue via<br>Digitization</div></div>
+  <div class="metric-cell"><div class="metric-val" data-target="150" data-suffix="+">0</div><div class="metric-desc">Fund Launches<br>Delivered</div></div>
+  <div class="metric-cell"><div class="metric-val" data-target="15" data-suffix="M+">0</div><div class="metric-desc">Records<br>Consolidated</div></div>
 </section>
 
-<!-- ═══ JOURNEY ═══ -->
-<section class="section">
-  <div class="section-header">
-    <div class="section-tag">Career Arc</div>
+<section class="section" id="journey">
+  <div class="section-head">
+    <div class="section-label">Career Arc</div>
     <h2>Two Decades of<br>Compounding Impact</h2>
+    <p class="section-subtitle">From building the first offshore engineering team in Bangalore to leading a global platform that powers Goldman's Private Wealth communications.</p>
   </div>
   <div class="timeline">
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="timeline-year">2023 — Present</div>
-      <div class="timeline-title">Senior Engineering Manager, VP</div>
-      <div class="timeline-org">Client Communication Platform · Wayne, PA</div>
-      <div class="timeline-impact">
-        <span class="impact-chip">Blue-Green Deployment</span>
-        <span class="impact-chip teal">Kafka Ingress Pipeline</span>
-        <span class="impact-chip">75M+ Record Migration</span>
-        <span class="impact-chip teal">Zero-Downtime Releases</span>
-      </div>
+    <div class="timeline-line"><div class="timeline-line-fill" id="tlFill"></div></div>
+    <div class="tl-item">
+      <div class="tl-marker"><div class="tl-marker-dot"></div></div>
+      <div class="tl-period">2023 — Present</div>
+      <div class="tl-role">Senior Engineering Manager, VP</div>
+      <div class="tl-org"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>Client Communication Platform · Wayne, PA</div>
+      <p class="tl-narrative">Architected blue-green deployments with canary rollout for zero-downtime releases. Led Kafka-based ingestion consolidating 15M+ metadata records into sub-1-second query stores. Drove cross-platform migration of 75M+ records with the firmwide Document Management team.</p>
+      <div class="tl-chips"><span class="chip">Blue-Green Deploys</span><span class="chip teal">Kafka Pipelines</span><span class="chip">75M+ Records</span><span class="chip teal">Zero Downtime</span></div>
     </div>
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="timeline-year">2018 — 2023</div>
-      <div class="timeline-title">Senior Engineering Manager, VP</div>
-      <div class="timeline-org">Client Communication Platform · Salt Lake City, UT</div>
-      <div class="timeline-impact">
-        <span class="impact-chip">Founded Platform from 0→1</span>
-        <span class="impact-chip teal">150+ Fund Launches</span>
-        <span class="impact-chip">$340M Fees</span>
-        <span class="impact-chip teal">93% e-Delivery</span>
-      </div>
+    <div class="tl-item">
+      <div class="tl-marker"><div class="tl-marker-dot"></div></div>
+      <div class="tl-period">2018 — 2023</div>
+      <div class="tl-role">Senior Engineering Manager, VP</div>
+      <div class="tl-org"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>Client Communication Platform · Salt Lake City, UT</div>
+      <p class="tl-narrative">Founded the platform from concept to production — building a team of 30 engineers and launching 150+ communication types with email, print, and e-signature channels. Digitized Alternative Investment subscriptions across 150+ funds generating $340M in fees.</p>
+      <div class="tl-chips"><span class="chip">0 → 1 Platform</span><span class="chip coral">$340M Fees</span><span class="chip teal">150+ Funds</span><span class="chip">93% e-Delivery</span></div>
     </div>
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="timeline-year">2015 — 2018</div>
-      <div class="timeline-title">Engineering Manager, VP</div>
-      <div class="timeline-org">Client Reporting & Portfolio Accounting · SLC</div>
-      <div class="timeline-impact">
-        <span class="impact-chip">75% Taxlot Compute Gain</span>
-        <span class="impact-chip teal">91% Reconciliation Gain</span>
-        <span class="impact-chip">$1M/yr Print Savings</span>
-      </div>
+    <div class="tl-item">
+      <div class="tl-marker"><div class="tl-marker-dot"></div></div>
+      <div class="tl-period">2015 — 2018</div>
+      <div class="tl-role">Engineering Manager, VP</div>
+      <div class="tl-org"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>Client Reporting & Portfolio Accounting · Salt Lake City, UT</div>
+      <p class="tl-narrative">Drove 75% throughput improvement in real-time taxlot compute and 91% efficiency gain in year-end tax reconciliation across 32M transactions. Established e-delivery of trade confirms saving $1M annually.</p>
+      <div class="tl-chips"><span class="chip">75% Compute Gain</span><span class="chip teal">91% Recon Gain</span><span class="chip coral">$1M/yr Savings</span></div>
     </div>
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="timeline-year">2011 — 2015</div>
-      <div class="timeline-title">Engineering Manager, VP</div>
-      <div class="timeline-org">Client Reporting · Salt Lake City, UT</div>
-      <div class="timeline-impact">
-        <span class="impact-chip">4.5M Documents/Year</span>
-        <span class="impact-chip teal">12+ Comm Flows</span>
-        <span class="impact-chip">US & European Regulatory</span>
-      </div>
+    <div class="tl-item">
+      <div class="tl-marker"><div class="tl-marker-dot"></div></div>
+      <div class="tl-period">2011 — 2015</div>
+      <div class="tl-role">Engineering Manager, VP</div>
+      <div class="tl-org"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>Client Reporting · Salt Lake City, UT</div>
+      <p class="tl-narrative">Primary owner of 12+ communication flows delivering ~4.5M documents annually to PWM clients globally — statements, tax reporting, regulatory communications, and trade confirms.</p>
+      <div class="tl-chips"><span class="chip">4.5M Docs/Year</span><span class="chip teal">12+ Flows</span><span class="chip">US & EU Regulatory</span></div>
     </div>
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="timeline-year">2005 — 2011</div>
-      <div class="timeline-title">Lead Application Developer, VP</div>
-      <div class="timeline-org">Client Reporting · Bangalore, India</div>
-      <div class="timeline-impact">
-        <span class="impact-chip">Built BLR Team 2→8</span>
-        <span class="impact-chip teal">Asia & EMEA Business</span>
-      </div>
+    <div class="tl-item">
+      <div class="tl-marker"><div class="tl-marker-dot"></div></div>
+      <div class="tl-period">2005 — 2011</div>
+      <div class="tl-role">Lead Application Developer, VP</div>
+      <div class="tl-org"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>Client Reporting · Bangalore, India</div>
+      <p class="tl-narrative">Established Goldman Sachs' Client Reporting engineering presence in Bangalore — grew the team from 2 to 8 engineers who independently delivered business and regulatory projects for Asia and EMEA.</p>
+      <div class="tl-chips"><span class="chip">Team 2 → 8</span><span class="chip teal">Asia & EMEA</span></div>
     </div>
   </div>
 </section>
 
-<!-- ═══ IMPACT PILLARS ═══ -->
-<section class="section" style="background: var(--navy-mid);">
-  <div class="section-header">
-    <div class="section-tag">Signature Outcomes</div>
-    <h2>What I Build &<br>Why It Matters</h2>
+<section class="section" id="impact" style="background:var(--navy-mid)">
+  <div class="section-head">
+    <div class="section-label">Signature Outcomes</div>
+    <h2>What I Build &amp;<br>Why It Matters</h2>
   </div>
   <div class="impact-grid">
-    <div class="impact-card">
-      <span class="impact-icon">⚡</span>
-      <h3>Platform from Zero</h3>
-      <p>Founded the Client Communication Platform from concept to production — centralizing content creation, multi-channel delivery, and e-signature across 150+ communication types for PWM clients globally.</p>
-      <div class="impact-stat">
-        <div class="num">150+</div>
-        <div class="label">Communication Types</div>
-      </div>
+    <div class="impact-card"><div class="card-icon gold">&#9889;</div><h3>Platform from Zero</h3><p>Founded the Client Communication Platform from concept to production — centralizing content creation, multi-channel delivery, and e-signature across 150+ communication types for PWM clients globally.</p><div class="card-stat"><div class="card-stat-num">150+</div><div class="card-stat-label">Communication Types</div></div></div>
+    <div class="impact-card"><div class="card-icon teal">&#128260;</div><h3>Digital Transformation</h3><p>Multi-year end-to-end digitization of Alt Investment subscription workflows — automating fund manager onboarding and expanding across multiple Fund Administrators.</p><div class="card-stat"><div class="card-stat-num">$340M</div><div class="card-stat-label">In Fees Generated</div></div></div>
+    <div class="impact-card"><div class="card-icon coral">&#128202;</div><h3>Data at Scale</h3><p>Consolidated 15M+ metadata records via Kafka into sub-1-second query stores. Optimized 32M-transaction tax reconciliation by 91%. Benchmarked 75M+ records cross-platform.</p><div class="card-stat"><div class="card-stat-num">&lt;1s</div><div class="card-stat-label">Query Response</div></div></div>
+    <div class="impact-card"><div class="card-icon purple">&#127758;</div><h3>Global Team Builder</h3><p>Built engineering organizations from scratch across US, India, and EMEA — hiring, structuring, managing managers, driving promotions, and mentoring on multi-year career trajectories.</p><div class="card-stat"><div class="card-stat-num">30+</div><div class="card-stat-label">Engineers · 4 Sites</div></div></div>
+    <div class="impact-card"><div class="card-icon blue">&#128737;</div><h3>Operational Excellence</h3><p>Blue-green deployments with canary rollout. DORA metrics for improvement. Full observability — Prometheus, Grafana, ELK, OpenTelemetry. Highest test maturity across all components.</p><div class="card-stat"><div class="card-stat-num">Zero</div><div class="card-stat-label">Downtime Deploys</div></div></div>
+    <div class="impact-card"><div class="card-icon amber">&#129309;</div><h3>Stakeholder Partner</h3><p>Trusted technology partner to Product, Operations, Legal, and Compliance — translating business priorities into multi-year roadmaps and KPI-driven delivery plans.</p><div class="card-stat"><div class="card-stat-num">MiFID II</div><div class="card-stat-label">FINRA · Swiss Banking</div></div></div>
+  </div>
+</section>
+
+<section class="section gains-section" id="gains">
+  <div class="section-head">
+    <div class="section-label">Measurable Results</div>
+    <h2>Efficiency Gains<br>That Compound</h2>
+  </div>
+  <div class="gains-grid">
+    <div class="gain-item"><div class="gain-header"><span class="gain-label">Electronic Delivery Rate</span><span class="gain-pct">93%</span></div><div class="gain-bar-track"><div class="gain-bar-fill gold" data-width="93"></div></div><div class="gain-desc">Eliminated ~$1M/year in print costs across PWM communications</div></div>
+    <div class="gain-item"><div class="gain-header"><span class="gain-label">Tax Reconciliation Speed</span><span class="gain-pct">91%</span></div><div class="gain-bar-track"><div class="gain-bar-fill teal" data-width="91"></div></div><div class="gain-desc">Year-end processing across 32M reportable transactions</div></div>
+    <div class="gain-item"><div class="gain-header"><span class="gain-label">Taxlot Compute Throughput</span><span class="gain-pct">75%</span></div><div class="gain-bar-track"><div class="gain-bar-fill coral" data-width="75"></div></div><div class="gain-desc">Real-time taxlot compute acceleration for portfolio accounting</div></div>
+    <div class="gain-item"><div class="gain-header"><span class="gain-label">Query Performance</span><span class="gain-pct">&lt;1s</span></div><div class="gain-bar-track"><div class="gain-bar-fill gold" data-width="98"></div></div><div class="gain-desc">Sub-second queries on 15M+ consolidated metadata records via Kafka</div></div>
+    <div class="gain-item"><div class="gain-header"><span class="gain-label">Print Cost Reduction</span><span class="gain-pct">$1M+</span></div><div class="gain-bar-track"><div class="gain-bar-fill teal" data-width="85"></div></div><div class="gain-desc">Annual savings through trade confirm e-delivery integration</div></div>
+    <div class="gain-item"><div class="gain-header"><span class="gain-label">Deployment Reliability</span><span class="gain-pct">100%</span></div><div class="gain-bar-track"><div class="gain-bar-fill coral" data-width="100"></div></div><div class="gain-desc">Zero-downtime intra-day releases via blue-green + canary</div></div>
+  </div>
+</section>
+
+<section class="section" id="global">
+  <div class="section-head">
+    <div class="section-label">Global Reach</div>
+    <h2>Teams Across<br>Three Continents</h2>
+  </div>
+  <div class="map-container">
+    <div class="map-svg-wrap">
+      <svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto">
+        <defs><linearGradient id="mg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:rgba(201,168,76,0.06)"/><stop offset="100%" style="stop-color:rgba(78,205,196,0.03)"/></linearGradient></defs>
+        <rect fill="url(#mg)" rx="8" width="800" height="400"/>
+        <g stroke="rgba(201,168,76,0.04)" stroke-width="0.5"><line x1="0" y1="100" x2="800" y2="100"/><line x1="0" y1="200" x2="800" y2="200"/><line x1="0" y1="300" x2="800" y2="300"/><line x1="200" y1="0" x2="200" y2="400"/><line x1="400" y1="0" x2="400" y2="400"/><line x1="600" y1="0" x2="600" y2="400"/></g>
+        <g fill="rgba(201,168,76,0.06)" stroke="rgba(201,168,76,0.08)" stroke-width="0.5">
+          <path d="M80,60 L180,50 L220,80 L210,140 L180,180 L160,200 L120,190 L100,160 L70,120Z"/>
+          <path d="M180,220 L210,210 L230,240 L235,290 L220,340 L190,360 L170,320 L165,270Z"/>
+          <path d="M360,70 L420,60 L440,80 L430,120 L410,140 L380,130 L360,110Z"/>
+          <path d="M380,160 L430,150 L450,190 L440,260 L410,300 L380,280 L370,220Z"/>
+          <path d="M460,50 L580,40 L650,70 L680,120 L660,170 L600,190 L540,180 L490,150 L460,120Z"/>
+          <path d="M540,180 L580,175 L590,210 L570,260 L550,250 L530,220Z"/>
+        </g>
+        <g stroke="rgba(201,168,76,0.1)" stroke-width="0.5" stroke-dasharray="4 4"><line x1="185" y1="115" x2="560" y2="230"/><line x1="185" y1="115" x2="130" y2="120"/><line x1="185" y1="115" x2="155" y2="155"/><line x1="560" y1="230" x2="555" y2="210"/></g>
+        <circle class="map-dot-ring" cx="185" cy="115" r="6"/><circle class="map-dot" cx="185" cy="115" r="5"/>
+        <text x="185" y="105" text-anchor="middle" fill="var(--gold)" font-size="9" font-family="'JetBrains Mono',monospace" letter-spacing="1">WAYNE</text>
+        <circle class="map-dot-ring" cx="130" cy="120" r="6"/><circle class="map-dot" cx="130" cy="120" r="5"/>
+        <text x="130" y="110" text-anchor="middle" fill="var(--gold)" font-size="9" font-family="'JetBrains Mono',monospace" letter-spacing="1">SLC</text>
+        <circle class="map-dot-ring" cx="155" cy="155" r="6"/><circle class="map-dot" cx="155" cy="155" r="4" style="fill:var(--accent)"/>
+        <text x="155" y="170" text-anchor="middle" fill="var(--accent)" font-size="8" font-family="'JetBrains Mono',monospace" letter-spacing="1">DALLAS</text>
+        <circle class="map-dot-ring" cx="560" cy="230" r="6"/><circle class="map-dot" cx="560" cy="230" r="5"/>
+        <text x="560" y="248" text-anchor="middle" fill="var(--gold)" font-size="9" font-family="'JetBrains Mono',monospace" letter-spacing="1">BANGALORE</text>
+        <circle class="map-dot-ring" cx="555" cy="210" r="6"/><circle class="map-dot" cx="555" cy="210" r="4" style="fill:var(--accent)"/>
+        <text x="575" y="205" text-anchor="start" fill="var(--accent)" font-size="8" font-family="'JetBrains Mono',monospace" letter-spacing="1">HYD</text>
+      </svg>
     </div>
-    <div class="impact-card">
-      <span class="impact-icon">🔄</span>
-      <h3>Digital Transformation</h3>
-      <p>Led multi-year end-to-end digitization of Alternative Investment subscription workflows — automating fund manager onboarding, client documentation, and expanding across multiple Fund Administrators.</p>
-      <div class="impact-stat">
-        <div class="num">$340M</div>
-        <div class="label">In Fees Generated</div>
-      </div>
-    </div>
-    <div class="impact-card">
-      <span class="impact-icon">📊</span>
-      <h3>Data at Scale</h3>
-      <p>Consolidated 15M+ metadata records via Kafka into sub-1-second query stores. Optimized 32M-transaction tax reconciliation by 91%. Benchmarked ingestion across 75M+ records cross-platform.</p>
-      <div class="impact-stat">
-        <div class="num">&lt;1s</div>
-        <div class="label">Query Response Time</div>
-      </div>
-    </div>
-    <div class="impact-card">
-      <span class="impact-icon">🌏</span>
-      <h3>Global Team Builder</h3>
-      <p>Built engineering orgs from the ground up across US, India, and EMEA — hiring, establishing structures, managing managers, driving promotions, and mentoring engineers on multi-year career trajectories.</p>
-      <div class="impact-stat">
-        <div class="num">30+</div>
-        <div class="label">Engineers Across 4 Sites</div>
-      </div>
-    </div>
-    <div class="impact-card">
-      <span class="impact-icon">🛡️</span>
-      <h3>Operational Excellence</h3>
-      <p>Blue-green deployments with canary rollout. DORA metrics for continuous improvement. Full observability stack (Prometheus, Grafana, ELK, OpenTelemetry). Highest test maturity across all components.</p>
-      <div class="impact-stat">
-        <div class="num">0</div>
-        <div class="label">Downtime Deployments</div>
-      </div>
-    </div>
-    <div class="impact-card">
-      <span class="impact-icon">🤝</span>
-      <h3>Stakeholder Partner</h3>
-      <p>Trusted technology partner to senior stakeholders across Product, Operations, Legal, and Compliance — translating business priorities into multi-year roadmaps and KPI-driven delivery plans.</p>
-      <div class="impact-stat">
-        <div class="num">MiFID II</div>
-        <div class="label">FINRA · Swiss Banking</div>
-      </div>
+    <div class="map-legend">
+      <div class="map-site"><div class="map-site-name">Wayne, PA</div><div class="map-site-detail">Current HQ — Platform leadership, architecture, stakeholder partnership</div></div>
+      <div class="map-site"><div class="map-site-name">Salt Lake City, UT</div><div class="map-site-detail">Founded the platform team — 30+ engineers, full lifecycle delivery</div></div>
+      <div class="map-site"><div class="map-site-name">Bangalore & Hyderabad</div><div class="map-site-detail">Offshore engineering — built from 2 to 8+ engineers, Asia/EMEA delivery</div></div>
+      <div class="map-site"><div class="map-site-name">Dallas, TX</div><div class="map-site-detail">Extended team operations and cross-site coordination</div></div>
     </div>
   </div>
 </section>
 
-<!-- ═══ PHILOSOPHY ═══ -->
+<section class="section" id="community" style="background:var(--navy-mid)">
+  <div class="section-head">
+    <div class="section-label">Industry Engagement</div>
+    <h2>Sharing What<br>I've Learned</h2>
+  </div>
+  <div class="speaking-grid">
+    <div class="speaking-card"><div class="speaking-venue">GS Engineering Expo 2023</div><div class="speaking-title">Microservice Orchestration via Event-Driven Architecture</div><div class="speaking-desc">Firmwide Tech Talk on patterns for orchestrating distributed microservices using Kafka and event-driven design.</div></div>
+    <div class="speaking-card"><div class="speaking-venue">Utah Geek Events 2020</div><div class="speaking-title">Request-Reply EIP with Apache Kafka</div><div class="speaking-desc">Public talk on implementing Enterprise Integration Patterns using Kafka for synchronous request-reply workflows.</div></div>
+    <div class="speaking-card"><div class="speaking-venue">Internal Training</div><div class="speaking-title">Introduction to Kafka</div><div class="speaking-desc">Multi-session training series for 60+ participants across Goldman Sachs engineering teams.</div></div>
+    <div class="speaking-card"><div class="speaking-venue">SheTech Foundation</div><div class="speaking-title">Women in Technology Workshops</div><div class="speaking-desc">Led hands-on workshops for 100+ high school students promoting careers in technology and engineering.</div></div>
+  </div>
+</section>
+
 <section class="philosophy">
-  <blockquote>
-    The best platforms disappear — they're so reliable, so well-integrated, that the business forgets there's engineering behind them. That invisibility is the highest compliment.
-  </blockquote>
+  <span class="quote-marks">&ldquo;</span>
+  <blockquote>The best platforms disappear — they're so reliable, so well-integrated, that the business forgets there's engineering behind them. That invisibility is the highest compliment.</blockquote>
   <div class="attribution">— My Philosophy on Platform Engineering</div>
 </section>
 
-<!-- ═══ TECH STACK ═══ -->
-<section class="section">
-  <div class="section-header">
-    <div class="section-tag">Technical Depth</div>
+<section class="section" id="tech">
+  <div class="section-head">
+    <div class="section-label">Technical Depth</div>
     <h2>Built With</h2>
   </div>
-  <div class="tech-grid">
-    <div class="tech-category">
-      <h4>Architecture</h4>
-      <div class="tech-tags">
-        <span class="tech-tag">Distributed Systems</span>
-        <span class="tech-tag">Event-Driven</span>
-        <span class="tech-tag">SOA</span>
-        <span class="tech-tag">API Design</span>
-        <span class="tech-tag">Blue-Green</span>
-        <span class="tech-tag">Canary Releases</span>
-      </div>
-    </div>
-    <div class="tech-category">
-      <h4>Data & Streaming</h4>
-      <div class="tech-tags">
-        <span class="tech-tag">Apache Kafka</span>
-        <span class="tech-tag">MongoDB</span>
-        <span class="tech-tag">Sybase ASE</span>
-        <span class="tech-tag">Data Lake</span>
-        <span class="tech-tag">Doc Lifecycle</span>
-      </div>
-    </div>
-    <div class="tech-category">
-      <h4>Observability</h4>
-      <div class="tech-tags">
-        <span class="tech-tag">Prometheus</span>
-        <span class="tech-tag">Grafana</span>
-        <span class="tech-tag">ELK Stack</span>
-        <span class="tech-tag">OpenTelemetry</span>
-        <span class="tech-tag">Jaeger</span>
-        <span class="tech-tag">DORA Metrics</span>
-      </div>
-    </div>
-    <div class="tech-category">
-      <h4>Development</h4>
-      <div class="tech-tags">
-        <span class="tech-tag">Java</span>
-        <span class="tech-tag">Python</span>
-        <span class="tech-tag">Spring</span>
-        <span class="tech-tag">REST</span>
-        <span class="tech-tag">Apache Camel</span>
-        <span class="tech-tag">Kubernetes</span>
-      </div>
-    </div>
-    <div class="tech-category">
-      <h4>Leadership</h4>
-      <div class="tech-tags">
-        <span class="tech-tag">Strategy & Roadmaps</span>
-        <span class="tech-tag">Product Management</span>
-        <span class="tech-tag">Vendor Management</span>
-        <span class="tech-tag">Agile</span>
-        <span class="tech-tag">Global Teams</span>
-      </div>
-    </div>
+  <div class="tech-columns">
+    <div class="tech-col"><h4>Architecture</h4><div class="tech-pills"><span class="tech-pill">Distributed Systems</span><span class="tech-pill">Event-Driven</span><span class="tech-pill">SOA</span><span class="tech-pill">API Design</span><span class="tech-pill">Blue-Green</span><span class="tech-pill">Canary Releases</span></div></div>
+    <div class="tech-col"><h4>Data & Streaming</h4><div class="tech-pills"><span class="tech-pill">Apache Kafka</span><span class="tech-pill">MongoDB</span><span class="tech-pill">Sybase ASE</span><span class="tech-pill">Data Lake</span><span class="tech-pill">Doc Lifecycle</span></div></div>
+    <div class="tech-col"><h4>Observability</h4><div class="tech-pills"><span class="tech-pill">Prometheus</span><span class="tech-pill">Grafana</span><span class="tech-pill">ELK Stack</span><span class="tech-pill">OpenTelemetry</span><span class="tech-pill">Jaeger</span><span class="tech-pill">DORA Metrics</span></div></div>
+    <div class="tech-col"><h4>Development</h4><div class="tech-pills"><span class="tech-pill">Java</span><span class="tech-pill">Python</span><span class="tech-pill">Spring Boot</span><span class="tech-pill">REST APIs</span><span class="tech-pill">Apache Camel</span><span class="tech-pill">Kubernetes</span></div></div>
+    <div class="tech-col"><h4>Leadership</h4><div class="tech-pills"><span class="tech-pill">Strategy & Roadmaps</span><span class="tech-pill">Product Management</span><span class="tech-pill">Vendor Management</span><span class="tech-pill">Agile</span><span class="tech-pill">Global Teams</span></div></div>
   </div>
 </section>
 
-<!-- ═══ FOOTER CTA ═══ -->
-<section class="footer-cta">
-  <h2>Let's Talk</h2>
-  <p>Open to senior engineering leadership roles in Finance & FinTech — Greater Philadelphia & New York metro</p>
-  <div class="contact-row">
-    <a href="mailto:anuraag.verma@gmail.com" class="contact-item">
-      <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-      anuraag.verma@gmail.com
-    </a>
-    <a href="tel:8015992612" class="contact-item">
-      <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-      (801) 599-2612
-    </a>
-    <a href="https://linkedin.com/in/anuraag-verma" target="_blank" class="contact-item">
-      <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
-      LinkedIn
-    </a>
+<section class="footer-cta" id="contact">
+  <h2>Let's Build<br>Something Together</h2>
+  <p class="subtitle">Open to senior engineering leadership roles in Finance &amp; FinTech — Greater Philadelphia &amp; New York metro area.</p>
+  <div class="contact-cards">
+    <a href="mailto:anuraag.verma@gmail.com" class="contact-card"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>anuraag.verma@gmail.com</a>
+    <a href="tel:8015992612" class="contact-card"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>(801) 599-2612</a>
+    <a href="https://linkedin.com/in/anuraag-verma" target="_blank" class="contact-card"><svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>LinkedIn</a>
   </div>
-  <p class="footnote">Anuraag Verma · Senior Engineering Leader · Wealth & Asset Management Technology</p>
+  <p class="footer-note">Anuraag Verma · Senior Engineering Leader · Wealth &amp; Asset Management Technology</p>
 </section>
 
 <script>
-  // ── Counter Animation ──
-  function animateCounters() {
-    document.querySelectorAll('.metric-number').forEach(el => {
-      const target = parseInt(el.dataset.target);
-      const prefix = el.dataset.prefix || '';
-      const suffix = el.dataset.suffix || '';
-      const duration = 1800;
-      const start = performance.now();
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>60)},{passive:true});
 
-      function update(now) {
-        const elapsed = now - start;
-        const progress = Math.min(elapsed / duration, 1);
-        const eased = 1 - Math.pow(1 - progress, 3);
-        const current = Math.round(target * eased);
-        el.textContent = prefix + current + suffix;
-        if (progress < 1) requestAnimationFrame(update);
-      }
-      requestAnimationFrame(update);
-    });
-  }
-
-  // ── Intersection Observer ──
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        
-        if (entry.target.classList.contains('metrics')) {
-          animateCounters();
-        }
-      }
-    });
-  }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
-
-  document.querySelectorAll('.timeline-item, .impact-card, .tech-category').forEach(el => {
-    observer.observe(el);
+let countersAnimated=false;
+function animateCounters(){
+  if(countersAnimated)return;countersAnimated=true;
+  document.querySelectorAll('.metric-val').forEach(el=>{
+    const t=parseInt(el.dataset.target),pre=el.dataset.prefix||'',suf=el.dataset.suffix||'',dur=2000,s=performance.now();
+    function tick(n){const p=Math.min((n-s)/dur,1),e=1-Math.pow(1-p,4);el.textContent=pre+Math.round(t*e)+suf;if(p<1)requestAnimationFrame(tick)}
+    requestAnimationFrame(tick);
   });
+}
 
-  // Observe metrics section
-  const metricsSection = document.querySelector('.metrics');
-  if (metricsSection) observer.observe(metricsSection);
-
-  // ── Staggered animations ──
-  document.querySelectorAll('.impact-grid .impact-card').forEach((card, i) => {
-    card.style.transitionDelay = `${i * 0.1}s`;
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('visible');
+      if(e.target.id==='metrics')animateCounters();
+      if(e.target.classList.contains('gain-item')){const b=e.target.querySelector('.gain-bar-fill');if(b)setTimeout(()=>{b.style.width=b.dataset.width+'%'},200)}
+    }
   });
+},{threshold:0.15,rootMargin:'0px 0px -40px 0px'});
 
-  document.querySelectorAll('.tech-category').forEach((cat, i) => {
-    cat.style.transitionDelay = `${i * 0.08}s`;
-  });
+document.querySelectorAll('.tl-item,.impact-card,.tech-col,.gain-item,.speaking-card,.map-site').forEach(el=>obs.observe(el));
+document.getElementById('metrics')&&obs.observe(document.getElementById('metrics'));
 
-  document.querySelectorAll('.timeline-item').forEach((item, i) => {
-    item.style.transitionDelay = `${i * 0.15}s`;
-  });
+const tlS=document.getElementById('journey'),tlF=document.getElementById('tlFill');
+if(tlS&&tlF){new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)setTimeout(()=>{tlF.style.height='100%'},400)})},{threshold:0.1}).observe(tlS)}
+
+document.querySelectorAll('.impact-card').forEach((c,i)=>c.style.transitionDelay=i*0.08+'s');
+document.querySelectorAll('.tech-col').forEach((c,i)=>c.style.transitionDelay=i*0.06+'s');
+document.querySelectorAll('.gain-item').forEach((c,i)=>c.style.transitionDelay=i*0.1+'s');
+document.querySelectorAll('.speaking-card').forEach((c,i)=>c.style.transitionDelay=i*0.08+'s');
+document.querySelectorAll('.tl-item').forEach((c,i)=>c.style.transitionDelay=i*0.12+'s');
+document.querySelectorAll('.map-site').forEach((c,i)=>c.style.transitionDelay=i*0.1+'s');
 </script>
-
 </body>
 </html>
